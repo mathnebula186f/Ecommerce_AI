@@ -4,8 +4,8 @@ import { UserContextProvider } from "./UserContext";
 
 
 function App() {
-  // axios.defaults.baseURL = "https://messaging-app-dun.vercel.app";
-  axios.defaults.baseURL = "http://localhost:4000";
+  axios.defaults.baseURL = "https://ecommerce-ai-one.vercel.app/";
+  // axios.defaults.baseURL = "http://localhost:4000";
   axios.defaults.withCredentials =false;
   
   return (
