@@ -1,15 +1,8 @@
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import Avatar1AnimationData from "./lottie/Avatar1.json";
 
 export default function Avatar({ userId, username }) {
-  const Avatar1AnimationdefaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: Avatar1AnimationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+
   const colors = [
     "bg-green-200",
     "bg-red-200",
@@ -25,10 +18,11 @@ export default function Avatar({ userId, username }) {
     <div className={"w-8 h-8 b rounded-full  flex item-center bg-blue-50"}>
       {/* <div className="text-center w-full opacity-70">{username[0]}</div> */}
       <Lottie
-        options={Avatar1AnimationdefaultOptions}
+        animationData={Avatar1AnimationData}
+        loop={true}
         height={40}
         width={40}
-        className="text-center w-full opacity-70"
+        className="text-center w-full opacity-100 h-10 "
       />
     </div>
   );

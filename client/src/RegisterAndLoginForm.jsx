@@ -2,7 +2,7 @@ import { func } from "prop-types";
 import { useContext, useState } from "react";
 import { UserContext } from "./UserContext";
 import axios from "axios";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import LoginAnimationData from "./lottie/Login.json";
 import RegisterAnimationData from "./lottie/Register.json";
 import Logo from "./Logo";
@@ -81,16 +81,13 @@ export default function RegisterAndLoginForm() {
     <>
       <div className="bg-green-50">
         <ToastContainer />
-        <Lottie
-          options={LogoAnimationdefaultOptions}
-          height={200}
-          width={200}
-        />
+        
         <div className="bg-green-50 h-screen flex items-center font-montserrat">
           <Lottie
-            options={LoginAnimationdefaultOptions}
+            animationData={LoginAnimationData}
             height={400}
             width={400}
+            className=" h-96 w-96"
           />
           <form
             className="w-64 mx-auto mb-12 bg-white p-6 rounded-lg shadow-md border-4 border-green-400"
@@ -99,7 +96,7 @@ export default function RegisterAndLoginForm() {
             <h2 className="text-2xl text-center font-bold mb-6">
               {isLoginOrRegister === "register" ? "Register" : "Login"}
               <Lottie
-                options={RegisterAnimationdefaultOptions}
+                animationData={RegisterAnimationData}
                 height={100}
                 width={100}
               />
