@@ -63,6 +63,27 @@ async function getUserDataFromRequest(req) {
   });
 }  
 
+app.post("/resetChat", async (req, res) => {
+  const { userId1, userId2 } = req.body;
+
+  console.log("Reset called");
+  try {
+    // Find and delete all messages where either user is the sender or recipient
+    await Message.deleteMany({
+      $or: [
+        { sender: userId1, recipient: userId2 },
+        { sender: userId2, recipient: userId1 }
+      ]
+    });
+    console.log("Deleted the chat")
+    res.status(200).json({ message: "Messages successfully deleted" });
+  } catch (error) {
+    console.error("Error deleting messages:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+
 app.post("/messages/:userId", async (req, res) => {
   try {
     const { userId } = req.body;

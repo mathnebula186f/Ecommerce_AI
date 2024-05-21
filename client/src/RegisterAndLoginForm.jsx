@@ -87,18 +87,19 @@ export default function RegisterAndLoginForm() {
             animationData={LoginAnimationData}
             height={400}
             width={400}
-            className=" h-96 w-96"
+            className="h-60 w-60 sm:h-96 sm:w-96"
           />
           <form
-            className="w-64 mx-auto mb-12 bg-white p-6 rounded-lg shadow-md border-4 border-green-400"
+            className="w-64 mx-auto mb-12 bg-white p-6 rounded-lg shadow-md border-4 border-green-400 mr-2"
             onSubmit={handleSubmit}
           >
-            <h2 className="text-2xl text-center font-bold mb-6">
+            <h2 className="text-lg sm:text-2xl text-center font-bold mb-6">
               {isLoginOrRegister === "register" ? "Register" : "Login"}
               <Lottie
                 animationData={RegisterAnimationData}
                 height={100}
                 width={100}
+            
               />
             </h2>
             <input
@@ -106,22 +107,22 @@ export default function RegisterAndLoginForm() {
               onChange={(ev) => setUsername(ev.target.value)}
               type="text"
               placeholder="Username"
-              className="w-full rounded-sm p-2 mb-4 border-2 border-green-300 focus:outline-none focus:ring focus:ring-green-400"
+              className="text-sm sm:text-base w-full rounded-sm p-2 mb-4 border-2 border-green-300 focus:outline-none focus:ring focus:ring-green-400"
             />
             <input
               value={password}
               onChange={(ev) => setPassword(ev.target.value)}
               type="password"
               placeholder="Password"
-              className="w-full rounded-sm p-2 mb-4 border-2 border-green-300 focus:outline-none focus:ring focus:ring-green-400"
+              className=" text-sm sm:text-base w-full rounded-sm p-2 mb-4 border-2 border-green-300 focus:outline-none focus:ring focus:ring-green-400"
             />
             <button
-              className="bg-green-500 text-white block w-full rounded-lg p-2"
+              className="text-sm sm:text-base bg-green-500 text-white block w-full rounded-lg p-2"
               onClick={handleSubmit}
             >
               {isLoginOrRegister === "register" ? "Register" : "Login"}
             </button>
-            <div className="text-center mt-6">
+            <div className="text-center mt-6 text-sm sm:text-base">
               {isLoginOrRegister === "register" && (
                 <div>
                   Already a member?{" "}
